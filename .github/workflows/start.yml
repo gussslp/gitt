@@ -21,4 +21,4 @@ jobs:
 
       - name: Run django
         run: |
-          python manage.py runserver
+          python actionsgh/manage.py runserver
