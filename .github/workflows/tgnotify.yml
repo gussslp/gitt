@@ -7,18 +7,18 @@ jobs:
   telegram-notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: install python and dependecies
-        run: |
-          sudo apt-get update
-          sudo apt-get install python3 python3-pip -y
-          pip3 install pytelegrambotapi
-      
-      - name: Send Notification
-        env:
-          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN}}
-          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID}}
-        run: |
-          python3 telegram.py
+    - name: install python and dependecies
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3 python3-pip -y
+        pip3 install pytelegrambotapi
+    
+    - name: Send Notification
+      env:
+        BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN}}
+        CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID}}
+      run: |
+        python3 telegram.py
